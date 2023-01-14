@@ -3,7 +3,7 @@
 //Estilos
 import './CardWidget.css'
 //Componetnes
-import Carrito from "./carrito2.jpeg"
+import Carrito from "../cardWidget/Carrito.png"
 //Core
 
 

@@ -1,23 +1,23 @@
 //Importaciones
 //Modulos
 //Estilos
-import './Main.css'
+import './AboutUs.css'
 //Componetnes
 //Core
 
 
 //Logica
-const Main = () => { //Funcion consructora
-
+const AboutUs = () => { //Funcion consructora
 
     //Retorno que se va a renderizar
     return(
-        <div className='fondo'> </div>
-
+        <p>
+            AboutUs
+        </p>
     )
 
 }
 
 
 //Exportacion 
-export default Main
+export default AboutUs

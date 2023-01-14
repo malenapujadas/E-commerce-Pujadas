@@ -12,8 +12,8 @@ const Footer = () => { //Funcion consructora
 
     //Retorno que se va a renderizar
     return(
-        <p>
-            {/* Footer */}
+        <p className='footer'>
+            Diseñado por Malena Pujadas
         </p>
 
     )

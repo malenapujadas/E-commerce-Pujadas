@@ -1,5 +1,7 @@
 //Importaciones
 //Modulos
+import { Link } from 'react-router-dom'
+
 //Estilos
 import './NavBar.css'
 import CardWidget from '../cardWidget/CardWidget'
@@ -20,11 +22,10 @@ const NavBar = () => { //Funcion consructora
                 </div>
                 <div>
                     <ul>
-                        <li><a href='#'>inicio</a></li>
-                        <li><a href='#'>tortas</a></li>
-                        <li><a href='#'>box</a></li>
-                        <li><a href='#'>muffins</a></li>
-                        <li><a href='#'>contacto</a></li>
+{/* en realidad yo quiero que sea una seccion productos y ahi todas las categorias */}
+                        <li><Link to='/'>home</Link></li>
+                        <li><Link to='/productos'>productos</Link></li>
+                        <li><Link to='/nosotros'>nosotros</Link></li>
                     </ul>
                 </div>
                 <div>

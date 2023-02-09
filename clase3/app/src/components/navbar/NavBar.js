@@ -17,19 +17,21 @@ const NavBar = () => { //Funcion consructora
     return(
         <header>
             <nav className='navbar'>
-                <div>
-                    <p>piúdulce</p>
+                <div className='logo'>
+                    <p>PIUDULCE</p>
                 </div>
                 <div>
                     <ul>
-{/* en realidad yo quiero que sea una seccion productos y ahi todas las categorias */}
                         <li><Link to='/'>home</Link></li>
                         <li><Link to='/productos'>productos</Link></li>
+                        <li><Link to='/categoria/tortasClasicas'>tortas clasicas</Link></li>
+                        <li><Link to='/categoria/tortasDecoradas'>tortas decoradas</Link></li>
                         <li><Link to='/nosotros'>nosotros</Link></li>
+                        
                     </ul>
                 </div>
-                <div>
-            <CardWidget cantidad="3"/>
+                <div className='numero'>
+                    <Link to='/carrito'><CardWidget cantidad="3"/></Link>
                 </div>
             </nav>
         </header>

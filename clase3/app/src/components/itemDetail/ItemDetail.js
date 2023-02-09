@@ -1,20 +1,52 @@
 //Importaciones
 //Modulos
+import { useState  } from 'react'
+import { CartContext} from '../../context/CartContext'
 //Estilos
 import './ItemDetail.css'
 
 //Componetnes
 import Card from 'react-bootstrap/Card'
 import ItemCount from '../itemCount/ItemCount'
-import ItemDetailContainer from '../itemDetailContainer/ItemDetailContainer'
-import ItemListContainer from '../itemListContainer/ItemListContainer'
+
 //Core
 
 
 //Logica
 const ItemDetail = (props) => { //Funcion consructora
 
-    const {title, description, category, price } = props.data
+
+    const [cantidad, setCantidad] = useState(0)
+
+
+    const {nombre, descripcion, categoria, precio, stock, id } = props.data
+
+    const { agregarAlCarrito} = CartContext()
+
+
+    const tomarCantidad = (numero) =>{
+        setCantidad(numero)
+    }
+
+    const onAdd = () => {
+
+        if (cantidad !== 0) {
+            const producto = {
+                id: id,
+                nombre: nombre,
+                categoria: categoria,
+                precio: precio,
+                count: cantidad,
+            }
+
+            agregarAlCarrito(producto)
+        } else {
+            alert("No te olvides de añadir productos")
+        }
+
+}
+
+
 
 
     //Retorno que se va a renderizar
@@ -24,16 +56,16 @@ const ItemDetail = (props) => { //Funcion consructora
         <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src="holder.js/100px180" />
         <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Text>{category}</Card.Text>
-        <Card.Text>{description}</Card.Text>
-        <Card.Text>{price}</Card.Text>
+        <Card.Title>{nombre}</Card.Title>
+        <Card.Text>{categoria}</Card.Text>
+        <Card.Text>{descripcion}</Card.Text>
+        <Card.Text>{precio}</Card.Text>
         
-        <ItemCount stock={10}/>  
+        <ItemCount stock={stock} cantidades={tomarCantidad}/>  
+        <button onClick={onAdd}>Agregar al carrito</button>
         </Card.Body>
     </Card>
-    <h1>Mas productos</h1>
-    <ItemListContainer/>
+    
         </article>
     )
 

@@ -22,6 +22,9 @@ const ItemCount = (props) => { //Funcion consructora
     const addOne = () => {
         if(count < props.stock){
         setCount(count + 1)
+
+        props.cantidades(count)
+
         }
     }
 
@@ -29,13 +32,12 @@ const ItemCount = (props) => { //Funcion consructora
     const disOne = () => {
         if (count > 0){
         setCount(count - 1)
+        props.cantidades(count)
         }
     }
 
     //Funcion agregar x cantida de productos 
-    const onAdd = () => {
-        console.log(count);
-    }
+    
 
 
     //Retorno que se va a renderizar
@@ -45,8 +47,7 @@ const ItemCount = (props) => { //Funcion consructora
                 <button onClick={addOne}>+</button>
                 <p>{count}</p>
                 <button onClick={disOne}>-</button>
-            </div>
-            <button onClick={onAdd}>On Add</button>
+            </div> 
         </div>
     )
 

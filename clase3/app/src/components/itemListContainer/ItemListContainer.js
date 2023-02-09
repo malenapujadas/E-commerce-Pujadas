@@ -1,6 +1,8 @@
 //Importaciones
 //Modulos
+import { items } from '../../services/firebase';
 
+import { getDocs } from 'firebase/firestore/lite';
 //Estilos
 import './ItemListContainer.css'
 

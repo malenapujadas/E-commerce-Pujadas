@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import './ItemList.css'
 //Componetnes
 import Item from '../item/Item'
+import { useParams } from 'react-router-dom'
 
 
 //Core
@@ -15,6 +16,9 @@ const ItemList = (props) => { //Funcion consructora
 
     const [productos, setProductos] = useState([])
 
+    const {categoriaId} = useParams()
+
+
     //Llamada a array de objetos
     
 
@@ -22,11 +26,17 @@ const ItemList = (props) => { //Funcion consructora
     // ------------- archivo JSON
 
     useEffect(()=>{
-        fetch('https://fakestoreapi.com/products')
+        fetch('../../misProductos.json')
             .then(res=>res.json())
             .then(json=> setProductos(json.map(productos => <Item key={productos.id} id={"producto" + productos.id} data={productos}/>)))
     },[])
+
     
+    
+
+
+
+
 
 
     //Tenemos un retraso de informacion
@@ -36,8 +46,6 @@ const ItemList = (props) => { //Funcion consructora
     return(
         <div>
             <p>este es el item List </p>
-
-            
             {productos}
         </div>
     )

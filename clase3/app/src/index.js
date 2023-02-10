@@ -11,16 +11,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
 //Componentes
-/* import App from './App'; */
 import CartProvider from './context/CartContext';
 import NavBar from './components/navbar/NavBar.js';
 import Home from './components/home/Home';
 import ItemListContainer from './components/itemListContainer/ItemListContainer.js';
 import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer';
-import ItemCategoryContainer from './components/itemCategoryContainer/ItemCategoryContainer';
 import AboutUs from './components/aboutUs/AboutUs';
 import Footer from './components/footer/Footer.js';
-import Cart from './components/cart/Cart';
 import CartListContainer from './components/cartListContainer/CartListContainer';
 
 
@@ -40,9 +37,9 @@ root.render(
         <NavBar />
         <Routes>
           <Route exact path='/' element={<Home />} />
-          <Route exact path='/productos' element={<ItemListContainer greeting='Estamos en los productos /' />} />
+          <Route exact path='/productos' element={<ItemListContainer/>} />
           <Route exact path='/producto/:productoId' element={<ItemDetailContainer />} />
-          <Route exact path='/categoria/:categoriaId' element={<ItemCategoryContainer />} />
+          <Route exact path='/categoria/:categoriaId' element={<ItemListContainer />} />
           <Route exact path='/carrito' element={<CartListContainer/>}/>
           <Route exact path='/nosotros' element={<AboutUs />} />
         </Routes>

@@ -15,11 +15,14 @@ const CartItem = ({item}) => { //Funcion consructora
     const {eliminarProducto} = useContext(CartContext)
 
     return (
-        <div>
+        <div className='contenedor_producto_carrito'>
+            <div>
+                <img className='imagen_carrito' src={item.imagen} alt={item.nombre}/>
+            </div>
+            
             <div className='texto_producto_carrito'>
                 <div className='claves'>
                     <p className='clave'>Nombre</p>
-                    <p className='clave'>Artista</p>
                     <p className='clave'>Precio U.</p>
                     <p className='clave'>Cantidad</p>
                     <p className='clave'>Total</p>
@@ -29,15 +32,16 @@ const CartItem = ({item}) => { //Funcion consructora
                         <p className='valor'>{item.nombre}</p>
                         <p className='valor'>{item.artista}</p>
                         <p className='valor'>${item.precio}</p>
-                        <p className='valor'>{item.quantity}</p>
+                        <p className='valor'>{item.cantidad}</p>
                         <p className='valor'>${item.precioTotal}</p>
                     </div>
                 </div>
             </div>
             <div className='borrar_producto'>
-                <p onClick={() => eliminarProducto(item.id)}></p>
+                <p onClick={()=>eliminarProducto(item.id)}></p>
             </div>
         </div>
+
     )
 
 }

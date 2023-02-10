@@ -31,7 +31,7 @@ const NavBar = () => { //Funcion consructora
                     </ul>
                 </div>
                 <div className='numero'>
-                    <Link to='/carrito'><CardWidget cantidad="3"/></Link>
+                    <CardWidget/>
                 </div>
             </nav>
         </header>

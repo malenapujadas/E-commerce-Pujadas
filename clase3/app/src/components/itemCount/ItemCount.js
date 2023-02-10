@@ -8,31 +8,22 @@ import './ItemCount.css'
 
 
 //Logica
-const ItemCount = (props) => { //Funcion consructora
+const ItemCount = ({stock, initial, agregar}) => { //Funcion consructora
 
-    //props.stock = "7"
-    //No puuede restar menos de 0
-    //No puede sumar mas de lacantidad maxima en stock
-
-    //Agregar un manejo de Estado
     //useState
-    const [count, setCount] = useState(0)
+    const [contador, setContador] = useState(initial)
 
     //Funciones de sumar uno con un maximo de stock 
-    const addOne = () => {
-        if(count < props.stock){
-        setCount(count + 1)
-
-        props.cantidades(count)
-
+    const sumarUno = () => {
+        if(contador < stock){
+        setContador(contador + 1)
         }
     }
 
     //Funcion de restar uno al contador seteando un minimo
-    const disOne = () => {
-        if (count > 0){
-        setCount(count - 1)
-        props.cantidades(count)
+    const restarUno = () => {
+        if (contador > 1){
+        setContador(contador - 1)
         }
     }
 
@@ -44,10 +35,14 @@ const ItemCount = (props) => { //Funcion consructora
     return(
         <div className='box-count'>
             <div className='box-count-children'>
-                <button onClick={addOne}>+</button>
-                <p>{count}</p>
-                <button onClick={disOne}>-</button>
-            </div> 
+                <button disabled={stock === 0} onClick={restarUno}>-</button>
+                <p>{contador}</p>
+                <button disabled={stock === 0} onClick={sumarUno}>+</button>
+            </div>
+            <div>
+                <button disabled={stock === 0} onClick={() => agregar(contador)}>Agregar al Carrito</button>
+            </div>
+
         </div>
     )
 

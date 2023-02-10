@@ -1,8 +1,10 @@
 //Importaciones
 //Modulos
-import { items } from '../../services/firebase';
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../services/firebase";
 
-import { getDocs } from 'firebase/firestore/lite';
 //Estilos
 import './ItemListContainer.css'
 
@@ -13,21 +15,45 @@ import ItemList from '../itemList/ItemList'
 
 
 //Logica
-const ItemListContainer = (props) => { //Funcion consructora
+const ItemListContainer = () => { //Funcion consructora
 
-    
+    const {categoriaId} = useParams([]);
+    const [productos, setProductos] = useState([]);
+
+    useEffect(() => {
+        const getData = async () => {
+            const queryRef = categoriaId
+                ? query(
+                    collection(db, "listaProductos"),
+                    where("categoria", "==", categoriaId)
+                )
+                : collection(db, "listaProductos");
+
+            // hacer la consulta
+            const response = await getDocs(queryRef);
+            const docsInfo = response.docs.map((doc) => {
+                const newDoc = {
+                    id: doc.id,
+                    ...doc.data(),
+                };
+                return newDoc;
+            });
+            setProductos(docsInfo);
+        };
+        getData();
+    }, [categoriaId]);
+
 
 
 
     //Retorno que se va a renderizar
     return(
         <div className='main-section'>
-            <p>{props.greeting}</p>
             
             <div>
                 <h1>Mis productos</h1>
             </div>
-            <ItemList/>
+            <ItemList item={productos}/>
         </div>
 
     )

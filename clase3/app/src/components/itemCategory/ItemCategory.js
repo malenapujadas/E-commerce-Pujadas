@@ -1,4 +1,4 @@
-//Importaciones
+/* //Importaciones
 //Modulos
 //Estilos
 import './ItemCategory.css'
@@ -39,7 +39,7 @@ const ItemCategory = (props) => { //Funcion consructora
             .then(res=>res.json())
             .then(json=> setProductos(json.map(productos => <Item key={productos.id} id={"producto" + productos.id} data={productos}/>)))
     },[productos,props.categoria]) */
-
+/* 
     return(
         <div>
             <p>ItemCategory</p>
@@ -51,4 +51,4 @@ const ItemCategory = (props) => { //Funcion consructora
 
 
 //Exportacion 
-export default ItemCategory
+export default ItemCategory */ 

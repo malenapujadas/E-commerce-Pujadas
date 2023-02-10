@@ -1,4 +1,4 @@
-//Importaciones
+/* //Importaciones
 //Modulos
 //Estilos
 import './ItemCategoryContainer.css'
@@ -26,4 +26,4 @@ const {categoriaId} = useParams()
 
 
 //Exportacion 
-export default ItemCategoryContainer
+export default ItemCategoryContainer */

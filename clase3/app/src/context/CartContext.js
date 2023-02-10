@@ -56,17 +56,6 @@ const CartProvider = ({children}) => {
             setProductoCarList(newList);
         }
     }
-        /* if (existeEnElCarrito(producto.id)) {
-            alert("El producto ya esta en el carrito ")
-        } else {
-            const listaActual = items
-            listaActual.push(data)
-            setItems(listaActual)
-            console.log(items);
-        } */
-    
-
-
 
 
 
@@ -112,6 +101,11 @@ const CartProvider = ({children}) => {
 }
 
 export default CartProvider
+
+
+
+
+
 
 
 

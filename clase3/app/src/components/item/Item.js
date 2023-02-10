@@ -11,21 +11,17 @@ import { Link } from 'react-router-dom'
 
 
 //Logica
-const Item = (props) => { //Funcion consructora
-
-    const {nombre, descripcion, categoria, precio, id, stock} = props.data
-
+const Item = ({item}) => { //Funcion consructora
 
     //Retorno que se va a renderizar
     return(
         <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="holder.js/100px180" />
+        <img src={item.imagen} alt={item.nombre}></img>
         <Card.Body>
-        <Card.Title>{nombre}</Card.Title>
-        <Card.Text>{categoria}</Card.Text>
-        {/* <Card.Text>{descripcion}</Card.Text> */}
-        <Card.Text>{precio}</Card.Text>
-        <Link to={`/producto/${id}`}>Ver detalle del producto</Link>
+        <Card.Title>{item.nombre}</Card.Title>
+        <Card.Text>{item.categoria}</Card.Text>
+        <Card.Text>${item.precio}</Card.Text>
+        <Link to={`/producto/${item.id}`}>Ver detalle del producto</Link>
         
         </Card.Body>
     </Card>

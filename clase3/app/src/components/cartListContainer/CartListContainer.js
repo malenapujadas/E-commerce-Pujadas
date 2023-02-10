@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 import './CartListContainer.css'
 
 // Componentes
-import Cart from '../cart/Cart';
+import CartItem from '../cartItem/CartItem';
 import Loader from '../loader/Loader';
 // Core
 
@@ -20,7 +20,7 @@ import Loader from '../loader/Loader';
 // Función constructora
 const CartListContainer = () => {
 
-    const { productoCarList, vaciarCarrito, obtenerTotal } = useContext(CartContext);
+    const { productoCarList, limpiarCarrito, obtenerTotal } = useContext(CartContext);
 
     const [cargando, setCargando] = useState(false);
     useEffect(() => {
@@ -41,14 +41,14 @@ const CartListContainer = () => {
                             <h3>Carrito de Compras </h3>
                         </div>
                         <div className="vaciar_carrito">
-                            <button onClick={vaciarCarrito} >Vaciar Carrito</button>
+                            <button onClick={limpiarCarrito} >Vaciar Carrito</button>
                         </div>
                         <div className='productos_carrito'>
                             {productoCarList.length > 0 ?
                                 <div>
                                     {
                                         productoCarList.map(item => (
-                                            <Cart key={item.id} item={item} />
+                                            <CartItem key={item.id} item={item} />
                                         ))
                                     }
                                     <div className='datos_finales'>

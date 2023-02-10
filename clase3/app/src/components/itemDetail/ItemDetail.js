@@ -13,60 +13,43 @@ import ItemCount from '../itemCount/ItemCount'
 
 
 //Logica
-const ItemDetail = (props) => { //Funcion consructora
-
-
-    const [cantidad, setCantidad] = useState(0)
-
-
-    const {nombre, descripcion, categoria, precio, stock, id } = props.data
+const ItemDetail = ({item}) => { //Funcion consructora
 
     const { agregarAlCarrito} = useContext(CartContext)
 
 
-    const tomarCantidad = (numero) =>{
-        setCantidad(numero)
+    const [cantidad, setCantidad] = useState(0)
+
+    
+
+    const agregar = (contador)=>{
+        agregarAlCarrito(item,contador);
+        setCantidad(contador);
     }
-
-    const onAdd = () => {
-
-        if (cantidad !== 0) {
-            const producto = {
-                id: id,
-                nombre: nombre,
-                categoria: categoria,
-                precio: precio,
-                count: cantidad,
-            }
-
-            agregarAlCarrito(producto)
-        } else {
-            alert("No te olvides de añadir productos")
-        }
-
-}
-
-
 
 
     //Retorno que se va a renderizar
     return(
-        <article className='itemDetail-producto'>
-            <h1>Detalle del producto seleccionado</h1>
+    <article className='itemDetail-producto'>
+        <h1>Detalle del producto seleccionado</h1>
         <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="holder.js/100px180" />
-        <Card.Body>
-        <Card.Title>{nombre}</Card.Title>
-        <Card.Text>{categoria}</Card.Text>
-        <Card.Text>{descripcion}</Card.Text>
-        <Card.Text>{precio}</Card.Text>
-        
-        <ItemCount stock={stock} cantidades={tomarCantidad}/>  
-        <button onClick={onAdd}>Agregar al carrito</button>
-        </Card.Body>
-    </Card>
-    
-        </article>
+        <img src={item.imagen} alt={item.nombre}></img>
+            <Card.Body>
+                <Card.Title>{item.nombre}</Card.Title>
+                <Card.Text>{item.categoria}</Card.Text>
+                <Card.Text>{item.descripcion}</Card.Text>
+                <Card.Text>{item.precio}</Card.Text>
+
+                <ItemCount initial={1} stock={item.stock} agregar={agregar} />
+                {
+                    cantidad > 0 &&
+                    <p>¡Producto Agregado!</p>
+                }
+
+            </Card.Body>
+        </Card>
+
+    </article>
     )
 
 }

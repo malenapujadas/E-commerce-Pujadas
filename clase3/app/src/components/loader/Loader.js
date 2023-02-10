@@ -1,6 +1,7 @@
 //Importaciones
 //Modulos
-import { useState } from 'react'
+import { useState, useEffect} from 'react'
+
 //Estilos
 
 import './Loader.css'

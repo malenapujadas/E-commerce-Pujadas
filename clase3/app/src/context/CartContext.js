@@ -3,7 +3,7 @@
  *************************/
 //useContext (utilizar el contexto creado), creatContext (crear el contexto de la aplicacion)=> react
 
-import { useContext, createContext, useState } from "react";
+import {createContext, useState } from "react";
 
 
 //1° Crear el contexto          valor dentro del argumento de la funcion es el valor x default del contexto
@@ -36,21 +36,21 @@ const CartProvider = ({children}) => {
 
 
 
-    const agregarAlCarrito = (producto, qty) => {
+    const agregarAlCarrito = (producto, cantidad) => {
 
         const newList = [...productoCarList];
 
         if(existeEnElCarrito(producto.id)){
             const productoIndex = productoCarList.findIndex(element=>element.id===producto.id);
 
-            newList[productoIndex].quantity = newList[productoIndex].quantity + qty;
+            newList[productoIndex].cantidad = newList[productoIndex].cantidad + cantidad;
 
-            newList[productoIndex].precioTotal = newList[productoIndex].quantity * newList[productoIndex].precio;
+            newList[productoIndex].precioTotal = newList[productoIndex].cantidad * newList[productoIndex].precio;
 
             setProductoCarList(newList)
 
         } else{
-            const newProducto={...producto, quantity:qty, precioTotal: qty*producto.precio}
+            const newProducto={...producto, cantidad:cantidad, precioTotal: cantidad*producto.precio}
             const newList = [...productoCarList];
             newList.push(newProducto);
             setProductoCarList(newList);
@@ -81,13 +81,13 @@ const CartProvider = ({children}) => {
     }
 
     const totalProductos = ()=>{
-        const totalProductos = productoCarList.reduce((acc,item)=>acc + item.quantity,0);
+        const totalProductos = productoCarList.reduce((acc,item)=>acc + item.cantidad,0);
         return totalProductos;
     }
 
     const obtenerTotal = () => {
         let total = 0
-        productoCarList.forEach((e) => total += (e.quantity*e.precio))
+        productoCarList.forEach((e) => total += (e.cantidad*e.precio))
         return total        
     };
 
@@ -97,7 +97,8 @@ const CartProvider = ({children}) => {
 
     //Render del CartProvider
     return(
-        <CartContext.Provider value={{productoCarList,
+        <CartContext.Provider value={{
+            productoCarList,
             agregarAlCarrito, 
             eliminarProducto, 
             limpiarCarrito, 
@@ -112,6 +113,6 @@ const CartProvider = ({children}) => {
 
 export default CartProvider
 
-//min 30
+
 
 

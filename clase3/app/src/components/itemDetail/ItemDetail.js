@@ -1,6 +1,6 @@
 //Importaciones
 //Modulos
-import { useState  } from 'react'
+import { useState,useContext  } from 'react'
 import { CartContext} from '../../context/CartContext'
 //Estilos
 import './ItemDetail.css'
@@ -21,7 +21,7 @@ const ItemDetail = (props) => { //Funcion consructora
 
     const {nombre, descripcion, categoria, precio, stock, id } = props.data
 
-    const { agregarAlCarrito} = CartContext()
+    const { agregarAlCarrito} = useContext(CartContext)
 
 
     const tomarCantidad = (numero) =>{

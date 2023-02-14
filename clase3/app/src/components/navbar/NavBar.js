@@ -24,8 +24,8 @@ const NavBar = () => { //Funcion consructora
                     <ul>
                         <li><Link to='/'>home</Link></li>
                         <li><Link to='/productos'>productos</Link></li>
-                        <li><Link to='/categoria/tortasClasicas'>tortas clasicas</Link></li>
-                        <li><Link to='/categoria/tortasDecoradas'>tortas decoradas</Link></li>
+                        <li><Link to='/categoria/Tortas clasicas'>tortas clasicas</Link></li>
+                        <li><Link to='/categoria/Tortas decoradas'>tortas decoradas</Link></li>
                         <li><Link to='/nosotros'>nosotros</Link></li>
                         
                     </ul>

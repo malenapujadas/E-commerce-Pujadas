@@ -30,7 +30,6 @@ const CartItem = ({item}) => { //Funcion consructora
                 <div>
                     <div className='valores'>
                         <p className='valor'>{item.nombre}</p>
-                        <p className='valor'>{item.artista}</p>
                         <p className='valor'>${item.precio}</p>
                         <p className='valor'>{item.cantidad}</p>
                         <p className='valor'>${item.precioTotal}</p>

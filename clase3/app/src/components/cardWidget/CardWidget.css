@@ -1,6 +1,9 @@
 .carrito{
     height: 22px;
     width: 22px;
+    text-decoration: none;
+    list-style-type: none;
+    color: rgb(107, 26, 26);
 }
 
 .cardWidget{

@@ -1,16 +1,23 @@
 .box-count{
-    display: flex;
     max-width: 200px;
     margin: 2rem;
+    
 }
 .box-count button{
-    background-color:  rgb(120, 199, 84);
+    background-color: white;
+    padding-bottom: 10px;
     border: none;
-    color: white;
+    color: black;
     margin: 0.2rem;
     padding: 0.2rem;
+
 }
 .box-count-children{
     display: flex;
     flex-direction: row;
+    outline: 2px solid brown;
+    justify-content: space-between;
+    border-radius: 4px;
+    height: 24px;
+    
 }

@@ -30,26 +30,26 @@ const ItemDetail = ({item}) => { //Funcion consructora
 
     //Retorno que se va a renderizar
     return(
-    <article className='itemDetail-producto'>
-        <h1>Detalle del producto seleccionado</h1>
-        <Card style={{ width: '18rem' }}>
-        <img src={item.imagen} alt={item.nombre}></img>
-            <Card.Body>
-                <Card.Title>{item.nombre}</Card.Title>
-                <Card.Text>{item.categoria}</Card.Text>
-                <Card.Text>{item.descripcion}</Card.Text>
-                <Card.Text>{item.precio}</Card.Text>
+        <article className='itemDetail-producto'>
+            <h1 className='detalle'>Detalle del producto seleccionado</h1>
+            <Card style={{ width: '18rem' }} className='cardBody'>
+                <img src={item.imagen} alt={item.nombre}></img>
+                <Card.Body >
+                    <Card.Text>{item.categoria}</Card.Text>
+                    <Card.Title>{item.nombre}</Card.Title>
+                    <Card.Text>{item.descripcion}</Card.Text>
+                    <Card.Text>${item.precio}</Card.Text>
 
-                <ItemCount initial={1} stock={item.stock} agregar={agregar} />
-                {
-                    cantidad > 0 &&
-                    <p>¡Producto Agregado!</p>
-                }
+                    <ItemCount initial={1} stock={item.stock} agregar={agregar} />
+                    {
+                        cantidad > 0 &&
+                        <p>¡Producto Agregado!</p>
+                    }
 
-            </Card.Body>
-        </Card>
+                </Card.Body>
+            </Card>
 
-    </article>
+        </article> 
     )
 
 }

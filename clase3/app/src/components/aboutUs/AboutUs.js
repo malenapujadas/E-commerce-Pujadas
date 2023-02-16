@@ -11,8 +11,6 @@ const AboutUs = () => { //Funcion consructora
 
     //Retorno que se va a renderizar
     return(
-        <div>
-            <div className='imgAboutUs'></div>
             <div className='aboutUs'>
                 Mi nombre es Malena Pujadas, tengo 20 años y soy estudiante de la carrera de desarrollo
                 Front end. Pero ademas, estudie Pastelería durante dos años, y actualmente
@@ -21,7 +19,6 @@ const AboutUs = () => { //Funcion consructora
                 un poco mas lejos. Todo esta hecho con mucho amor y dedicacion, y espero que se vea reflejado
                 en cada trabajo y que lo disfruten tanto como yo.
             </div>
-        </div>
     )
 
 }

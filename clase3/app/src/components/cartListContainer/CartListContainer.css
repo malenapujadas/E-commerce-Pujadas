@@ -8,19 +8,19 @@
 }
 
 .vaciar_carrito button{
-    background-color: #d25a1e;
+    /* background-color: #d25a1e; */
     padding: 8px;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     border: none;
     font-size: 16px;
-    color: #273139;
+    color: black;
     font-weight: 600;
     cursor: pointer;
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
 }
 
 .vaciar_carrito button:hover{
-    color: black;
+    color:brown;
 }
 
 .productos_carrito{
@@ -43,25 +43,25 @@
 }
 
 .seguir_comprando{
-    color: #6d808f;
+    color:brown;
     margin: 10px 15px;
     text-decoration: underline;
 }
 
 .comprar button{
-    background-color: #d25a1e;
+    /* background-color: #d25a1e; */
     padding: 8px;
-    border-radius: 20px;
+   /*  border-radius: 20px; */
     border: none;
     font-size: 16px;
-    color: #273139;
+    color: black;
     font-weight: 600;
     cursor: pointer;
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
 }
 
 .comprar button:hover{
-    color:black;
+    color:brown;
 }
 
 .datos_finales{
@@ -71,10 +71,10 @@
 }
 
 .datos_finales p{
-    background-color: #d25a1e;
+    background-color: brown;
     width: 100%;
     padding: 10px 10px;
-    color: #fff;
+    color:white;
     font-weight: 600;
     font-size: 20px;
     text-align: end;

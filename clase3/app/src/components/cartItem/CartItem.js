@@ -16,11 +16,12 @@ const CartItem = ({item}) => { //Funcion consructora
 
     return (
         <div className='contenedor_producto_carrito'>
-            <div>
+            {/*  <div>
                 <img className='imagen_carrito' src={item.imagen} alt={item.nombre}/>
-            </div>
+            </div> */}
             
             <div className='texto_producto_carrito'>
+            <img src={item.imagen} alt={item.nombre}></img>
                 <div className='claves'>
                     <p className='clave'>Nombre</p>
                     <p className='clave'>Precio U.</p>

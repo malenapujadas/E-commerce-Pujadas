@@ -14,8 +14,8 @@ import Item from '../item/Item'
 const ItemList = ({item}) => { //Funcion consructora
 
     return(
-        <div>
-            <p>este es el item List </p>
+        <div className='itemList'>
+            
             {
                 item.map(producto=>(
                     <Item key={producto.id} item={producto}/>

@@ -1,16 +1,6 @@
-.contenedorAboutUs{
-    height: auto;
-    display: flex;
-}
+
 .aboutUs{
-    width: 70%;
-    float: right;
-    position: relative;
+text-align: center;
+padding: 20px;
 }
-.imgAboutUs{
-    width: 30%;
-    height: 100px;
-    background-color: brown;
-    float: left;
-    position: relative;
-}
+

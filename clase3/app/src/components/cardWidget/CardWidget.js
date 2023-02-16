@@ -17,7 +17,7 @@ const CardWidget = () => { //Funcion consructora
     //Retorno que se va a renderizar
     return(
         <div className='cardWidget'>
-            <Link to="/carrito">
+            <Link to="/carrito" >
             <AiFillShopping className='carrito'/>
             </Link>
             {

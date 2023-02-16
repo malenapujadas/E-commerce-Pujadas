@@ -1,3 +1,7 @@
 .itemDetail-producto{
     margin: 100px 5%;
 }
+.cardBody{
+    display: flex;
+    flex-direction: column;
+}

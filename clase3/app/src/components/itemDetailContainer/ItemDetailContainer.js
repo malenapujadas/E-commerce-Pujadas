@@ -38,10 +38,11 @@ const ItemDetailContainer = () => { //Funcion consructora
     //Retorno que se va a renderizar
     return(
         <section className='itemDetail-box'>
-            <Link to="/productos">Volver a mis productos</Link>
+            
             
             <div>
                 <ItemDetail item={item}/>
+                <Link to="/productos" className='volver'>Volver a mis productos</Link>
             </div>
 
         </section>
